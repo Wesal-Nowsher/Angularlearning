@@ -1,0 +1,17 @@
+
+<button (click)="onToggle()">switch even/odd</button>
+
+<div *ngIf="toggle">
+
+  <p *ngFor="let odds of odd">{{odds}}</p>
+
+</div>
+
+<div *ngIf="!toggle">
+
+  <p *ngFor="let evens of even">{{evens}}</p>
+
+</div>
+
+<p appBasicHighlight>kumar sano</p>
+<p appBetterHighlight>kumar sano</p>
