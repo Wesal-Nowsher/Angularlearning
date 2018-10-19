@@ -1,15 +1,13 @@
-
-<button (click)="onToggle()">switch even/odd</button>
-<div *ngIf="toggle">
-  <p *ngFor="let odds of odd">{{odds}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>
+      <hr>
+      <app-account
+        *ngFor="let acc of accounts; let i = index"
+        [account]="acc"
+        [id]="i"
+        (statusChanged)="onStatusChanged($event)"></app-account>
+    </div>
+  </div>
 </div>
-<div *appUnless="toggle">
-  <p *ngFor="let evens of even">{{evens}}</p>
-</div>
- 
-<p appBasicHighlight>kumar sano</p>
-<p [appBetterHighlight]="'green'" [defaultColor]="'pink'" >kumar sano</p>
-<div [ngSwitch]="value">
-  <p *ngSwitchCase="5"> this is 4 </p>
-  <p *ngSwitchCase="4">and this 5</p>
-</div>      

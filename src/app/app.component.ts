@@ -1,19 +1,16 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from './account.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
 })
-export class AppComponent {
-  odd=[1,3,5];
-  even=[2,4,6];
-   toggle= true;
-  value='5';
+export class AppComponent implements OnInit {
 
-  onToggle() {
-    this.toggle = !this.toggle;
+  accounts: {name: string, status: string}[]=[];
+  constructor(private accountservice: AccountService){}
+  ngOnInit(){
+    this.accounts = this.accountservice.accounts;
   }
-
-
 }
