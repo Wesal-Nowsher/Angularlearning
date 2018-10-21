@@ -2,29 +2,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+
 import { AppComponent } from './app.component';
-import { BetterHighlightDirective } from './Better-higlight/better-highlight.directive';
-import { UnlessDirective } from './unless.directive';
-import { AccountComponent } from './account/account.component';
-import { NewAccountComponent } from './new-account/new-account.component';
-import { AccountService } from './account.service';
-import { LoggingService } from './logging.service';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { ServersComponent } from './servers/servers.component';
+import { UserComponent } from './users/user/user.component';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
+import { ServerComponent } from './servers/server/server.component';
+import { ServersService } from './servers/servers.service';
+
 @NgModule({
   declarations: [
     AppComponent,
-    BasicHighlightDirective,
-    BetterHighlightDirective,
-    UnlessDirective,
-    AccountComponent,
-    NewAccountComponent
+    HomeComponent,
+    UsersComponent,
+    ServersComponent,
+    UserComponent,
+    EditServerComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [ AccountService, LoggingService ],
+  providers: [ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
